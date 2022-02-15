@@ -1,4 +1,6 @@
 import math
+from juliandate.__version__ import __version__
+
 
 def to_julian(J):
     """Return a Julian calendar date for a Julian Day."""
@@ -81,3 +83,8 @@ def __tdiv(t, d):
 def __day_pct(h, m, sec, ms):
     s = sec + (ms/1_000_000)
     return ((h * 3600 + m * 60 + s) / 86400) - 0.5
+
+
+def version():
+    return __version__
+

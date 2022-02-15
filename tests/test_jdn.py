@@ -29,3 +29,7 @@ def test_rollover():
 
     # 0.75 should be 6 AM
     assert jd.to_julian(1705426.75) == (-43, 3, 16, 6, 0, 0, 0)
+
+
+def test_version():
+    assert jd.version() == "1.0.0"
