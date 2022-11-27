@@ -24,11 +24,21 @@ def test_from_julian():
 
 
 def test_rollover():
+    # Noon, 0.0 should be hour 12
+    assert jd.to_julian(1705426) == (-43, 3, 15, 12, 0, 0, 0)
+
+    # 0.25 should be hour 18
+    assert jd.to_julian(1705426.25) == (-43, 3, 15, 18, 0, 0, 0)
+    
     # Midnight, 0.5, should be zero
     assert jd.to_julian(1705426.5) == (-43, 3, 16, 0, 0, 0, 0)
 
     # 0.75 should be 6 AM
     assert jd.to_julian(1705426.75) == (-43, 3, 16, 6, 0, 0, 0)
+
+
+def test_rounding():
+    assert jd.to_julian(1566223.56309468) == (-424, 2, 2, 1, 30, 51, 380349)
 
 
 def test_version():

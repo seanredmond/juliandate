@@ -4,7 +4,7 @@ from juliandate.__version__ import __version__
 
 def to_julian(J):
     """Return a Julian calendar date for a Julian Day."""
-    return __jd_to_date(J + 1401) + __h_m_s(J)
+    return __jd_to_date(int(J + 0.5) + 1401) + __h_m_s(J)
 
 
 def to_gregorian(J):
