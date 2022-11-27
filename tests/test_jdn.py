@@ -42,4 +42,4 @@ def test_rounding():
 
 
 def test_version():
-    assert jd.version() == "1.0.0"
+    assert jd.version() == "1.0.1"
