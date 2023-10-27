@@ -131,7 +131,7 @@ Python `datetime` can easily be converted:
 	datetime.datetime(1969, 7, 20, 20, 17, 0, 9609)
 	
 	
-## Imprecision
+## Imprecision and Domain
 
 As noted above, floating-point math causes some imprecision in the
 seconds and microseconds. This is unavoidable since 24ths and 60ths
@@ -144,6 +144,8 @@ by 7 microseconds. Take care if this is important.
 You can check `juliandate`'s calculations against the US Naval
 Observeratory's [Julian Date
 Converter](https://aa.usno.navy.mil/data/JulianDate).
+
+The conversion formulas used by `juliandate` are valid only for JDN ≥ 0. That is, `juliandate` calculations cannot be considered correct for dates before Julian January 1, 4713 BCE = November 24, 4714 BCE.
 	
 ## Command Line Script
 
@@ -153,6 +155,13 @@ Converter](https://aa.usno.navy.mil/data/JulianDate).
     -43, 3, 13, 18, 0, 0, 0
 	
 Use `jd -h` for more usage details.
+
+## Sources
+
+The conversion formulas are taken from pages 604 and 606 of:
+
+Seidelmann, P.K. 2006 _Explanatory Supplement to the Astronomical Almanac: A Revision to the Explanatory Supplement to the Astronomical Ephemeris and the American Ephemeris and Nautical Almanac._ Sausalito, University Science Books.
+
 
 ## Contributing
 
