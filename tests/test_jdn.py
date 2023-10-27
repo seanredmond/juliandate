@@ -42,7 +42,7 @@ def test_rounding():
 
 
 def test_version():
-    assert jd.version() == "1.0.2"
+    assert jd.version() == "1.0.3"
 
 
 def test_julian_day0():
@@ -64,3 +64,10 @@ def test_for_rounding_error():
     assert jd.from_gregorian(*jd.to_gregorian(28951)) == 28951
     assert jd.from_gregorian(*jd.to_gregorian(4479)) == 4479
     assert jd.from_gregorian(*jd.to_gregorian(0)) == 0
+
+
+def test_fliegel_van_flandern():
+    # Fliegel, Henry F., and Thomas C. Van Flandern. “A Machine
+    # Algorithm for Processing Calendar Dates.” Communcations of the
+    # ACM 11, no. 10 (1968): 657.
+    assert jd.from_gregorian(1970, 1, 1, 12) == 2440588
