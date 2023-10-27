@@ -43,3 +43,24 @@ def test_rounding():
 
 def test_version():
     assert jd.version() == "1.0.2"
+
+
+def test_julian_day0():
+    assert jd.to_julian(0) == (-4712, 1, 1, 12, 0, 0, 0)
+    assert jd.from_julian(-4712, 1, 1, 12, 0, 0, 0) == 0
+
+
+def test_gregorian_day0():
+    assert jd.to_gregorian(0) == (-4713, 11, 24, 12, 0, 0, 0)
+    assert jd.from_gregorian(-4713, 11, 24, 12, 0, 0, 0) == 0
+
+
+def test_for_rounding_error():
+    # Some values that were subject to from_gregorian rounding error
+    # (Issue #2)
+    assert jd.from_gregorian(*jd.to_gregorian(187100)) == 187100
+    assert jd.from_gregorian(*jd.to_gregorian(150576)) == 150576
+    assert jd.from_gregorian(*jd.to_gregorian(41003)) == 41003
+    assert jd.from_gregorian(*jd.to_gregorian(28951)) == 28951
+    assert jd.from_gregorian(*jd.to_gregorian(4479)) == 4479
+    assert jd.from_gregorian(*jd.to_gregorian(0)) == 0
