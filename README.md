@@ -145,7 +145,7 @@ You can check `juliandate`'s calculations against the US Naval
 Observeratory's [Julian Date
 Converter](https://aa.usno.navy.mil/data/JulianDate).
 
-The conversion formulas used by `juliandate` are valid only for JDN ≥ 0. That is, `juliandate` calculations cannot be considered correct for dates before Julian January 1, 4713 BCE = November 24, 4714 BCE.
+The conversion formulas used by `juliandate` are valid only for JDN ≥ 0. That is, `juliandate` calculations cannot be considered correct for dates before Julian January 1, 4713 BCE = Gregorian November 24, 4714 BCE.
 	
 ## Command Line Script
 
