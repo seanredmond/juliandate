@@ -23,7 +23,7 @@ def from_gregorian(Y, M, D, H=0, m=0, sec=0, ms=0):
     return (
         int((1461 * (Y + 4800 + int((M - 14) / 12))) / 4)
         + int((367 * (M - 2 - 12 * int((M - 14) / 12))) / 12)
-        - int((3 * ((Y + 4900 + int((M - 14) / 12)) / 100)) / 4)
+        - int((3 * int((Y + 4900 + int((M - 14) / 12)) / 100)) / 4)
         + D
         - 32075
     ) + __day_pct(H, m, sec, ms)
