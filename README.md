@@ -162,6 +162,11 @@ The conversion formulas are taken from pages 604 and 606 of:
 
 Seidelmann, P.K. 2006 _Explanatory Supplement to the Astronomical Almanac: A Revision to the Explanatory Supplement to the Astronomical Ephemeris and the American Ephemeris and Nautical Almanac._ Sausalito, University Science Books.
 
+and pages 617–619 of:
+
+Urban, Sean E., and P. Kenneth Seidelmann, eds. _Explanatory Supplement to the Astronomical Almanac_. 3. ed. Mill Valley, Calif: University Science Books, 2012.
+
+
 
 ## Contributing
 

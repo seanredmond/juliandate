@@ -37,6 +37,20 @@ def test_rollover():
     assert jd.to_julian(1705426.75) == (-43, 3, 16, 6, 0, 0, 0)
 
 
+def test_gregorian_rollover():
+    assert jd.to_gregorian(2440646.0)[:6] == (1970, 2, 28, 12, 0, 0)
+    assert jd.to_gregorian(2440646.1)[:6] == (1970, 2, 28, 14, 24, 0)
+    assert jd.to_gregorian(2440646.2)[:6] == (1970, 2, 28, 16, 48, 0)
+    assert jd.to_gregorian(2440646.3)[:6] == (1970, 2, 28, 19, 11, 59)
+    assert jd.to_gregorian(2440646.4)[:6] == (1970, 2, 28, 21, 35, 59)
+    assert jd.to_gregorian(2440646.5)[:6] == (1970, 3, 1, 0, 0, 0)
+    assert jd.to_gregorian(2440646.6)[:6] == (1970, 3, 1, 2, 24, 0)
+    assert jd.to_gregorian(2440646.7)[:6] == (1970, 3, 1, 4, 48, 0)
+    assert jd.to_gregorian(2440646.8)[:6] == (1970, 3, 1, 7, 11, 59)
+    assert jd.to_gregorian(2440646.9)[:6] == (1970, 3, 1, 9, 35, 59)
+    assert jd.to_gregorian(2440647.0)[:6] == (1970, 3, 1, 12, 0, 0)    
+
+
 def test_rounding():
     assert jd.to_julian(1566223.56309468) == (-424, 2, 2, 1, 30, 51, 380349)
 
