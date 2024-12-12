@@ -68,6 +68,9 @@ def __jd_to_date(jdn, is_gregorian=False):
 
     Urban and Seidelmann, Explanatory Supplement to the Astronomical Almanac. 617–619
     """
+    if jdn < 0:
+        raise ValueError("JDN to convert must greater than 0")
+    
     # Round JDN to integer Julian day
     J = int(jdn + 0.5)
 

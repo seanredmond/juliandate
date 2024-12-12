@@ -1,3 +1,4 @@
+import pytest
 import juliandate as jd
 
 def test_gregorian():
@@ -85,3 +86,16 @@ def test_fliegel_van_flandern():
     # Algorithm for Processing Calendar Dates.” Communcations of the
     # ACM 11, no. 10 (1968): 657.
     assert jd.from_gregorian(1970, 1, 1, 12) == 2440588
+
+
+def test_negative_jdn():
+    # https://github.com/seanredmond/juliandate/issues/5
+    # -5090751.041666666 results in negative numbers
+    with pytest.raises(ValueError) as e_info1:
+        jd.to_julian(-5090751.041666666)
+    assert str(e_info1.value) == "JDN to convert must greater than 0"
+
+    with pytest.raises(ValueError) as e_info2:
+        jd.to_gregorian(-5090751.041666666)
+    assert str(e_info2.value) == "JDN to convert must greater than 0"
+

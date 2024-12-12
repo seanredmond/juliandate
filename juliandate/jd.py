@@ -31,13 +31,20 @@ def main():
 
     if args.file is None:
         for j in args.jds:
-            print(convert(j, args))
+            try:
+                print(convert(j, args))
+            except ValueError as e_info:
+                if (str(e_info).startswith("JDN")):
+                    print(f"Error: Cannot convert {j}, {e_info}")
+                pass
 
     else:
         for j in args.file:
             try:
                 print(convert(float(j), args))
-            except ValueError:
+            except ValueError as e_info:
+                if (str(e_info).startswith("JDN")):
+                    print(f"Error: Cannot convert {j}, {e_info}")
                 pass
 
 
