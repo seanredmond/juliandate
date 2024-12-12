@@ -59,7 +59,10 @@ a Gregorian Calendar date of March 13:
 
     >>> jd.to_gregorian(1705426)
 	(-43, 3, 13, 12, 0, 0)
-	
+
+Both to_julian() and to_gregorian() raise a ValueError passed a
+negative number. The published algorithm is not defined for numbers
+less than 0.
 	
 ### Converting from Gregorian or Julian Calendar Date to Julian Date
 

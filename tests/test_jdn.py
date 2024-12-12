@@ -57,7 +57,7 @@ def test_rounding():
 
 
 def test_version():
-    assert jd.version() == "1.0.4"
+    assert jd.version() == "1.0.5"
 
 
 def test_julian_day0():
